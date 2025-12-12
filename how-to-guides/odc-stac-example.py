@@ -1,22 +1,3 @@
-"""
-This is a third party library based on Xarray, but not listed under the Xarray documentation. 
-
-If you have problems with the installation, please refer to [odc-stac installation](https://odc-stac.readthedocs.io/en/latest/intro.html#installation).
-
-
-### Load pystac items into an Xarray
-
-In this code you will : 
-
-- Query a STAC API with pystac-client to get a pystac-items object; 
-- Load the `pystac-item` object into a Xarray.Dataset using `odc.stac`
-
-!!! info
-    This specific example uses the collection **landcover** from CCMEO's datacube.
-
-!!! info 
-    `odc.stac.load()` API definition: <https://odc-stac.readthedocs.io/en/latest/_api/odc.stac.load.html>
-"""
 # --8<-- [start:transform]
 def reorder_transform(gdal_transform):
     """

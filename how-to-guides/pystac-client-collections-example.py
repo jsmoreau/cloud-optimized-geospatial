@@ -1,13 +1,3 @@
-"""
-The developers of the pystac-client library provide multiple [examples](https://pystac-client.readthedocs.io/en/latest/tutorials.html) for interacting with
-STAC API. Please refer to those and consult the [pystac-client documentation](https://pystac-client.readthedocs.io/en/latest/quickstart.html) for additional information. 
-
-For certificate error while accessing the STAC API, see [using custom certificate](https://pystac-client.readthedocs.io/en/stable/usage.html#using-custom-certificates) documentation
-
-## List collections
-
-In this example you will learn how to query a STAC API with pystac-client to get the available collections
-"""
 # --8<-- [start:code]
 # Import the library needed
 import pystac_client

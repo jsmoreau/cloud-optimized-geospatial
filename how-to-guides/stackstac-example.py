@@ -1,22 +1,3 @@
-"""
-This is a third party library based on Xarray, but not listed under the Xarray documentation. 
-
-If you have problems with the installation, please refer to [stackstac installation](https://stackstac.readthedocs.io/en/latest/#installation).
-
-
-### Load pystac items into an Xarray
-
-In this code you will : 
-
-- Query a STAC API with pystac-client to get a `pystac-item` object; 
-- Load the `pystac-item` object into an Xarray.DataArray using `stackstac`
-- Stream the actual data in memory with dask workflow included in `stackstac`
-
-!!! info
-    This specific example uses the collections **hrdem-mosaic-1m**
-    from CCMEO's datacube
-
-"""
 # --8<-- [start:transform]
 def reorder_transform(gdal_transform):
     """

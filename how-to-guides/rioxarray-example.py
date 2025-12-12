@@ -1,33 +1,3 @@
-"""
-Load a single COG, using the link to the s3 object, into an xarray.
-
-Rioxarray is based on rasterio, and can be used to read data into Xarray object. 
-The developers of the rioxarray library provide additional usage examples, 
-like this [one](https://corteva.github.io/rioxarray/stable/examples/read-locks.html).
-
-## Read a portion of a remote COG into an xarray
-
-In this code you will : 
-
-- Query a STAC API with pystac-client to get link to a COG;  
-- Use rioxarray to read header of remote COG;
-- Open the remote COG by chunks;
-- Read an area of interest into an in memory Xarray object
-
-!!! info
-    This specific example uses the collection **hrdem-lidar** from CCMEO's datacube
-
-!!! Warning 
-    By default, the bbox used for clipping data inside `rio.clip_bbox()` needs to be in 
-    the projected coordinate system.  
-    See <https://corteva.github.io/rioxarray/stable/examples/clip_box.html#Clip-using-a-bounding-box>
-
-!!! Note 
-    When using `rioxarray.open_rasterio()` set `chunks` to enable lazy loading with Dask. This allows 
-    Dask to read data in smaller chunks, improving speed and memory usage through parallel computing. 
-    For example, a `chunk` size of 1000 for both x and y means Dask reads 100x100 boxes instead of the 
-    entire array, processing multiple chunks simultaneously.
-"""
 # --8<-- [start:code]
 import pystac_client
 import rioxarray
