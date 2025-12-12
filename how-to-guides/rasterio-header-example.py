@@ -1,17 +1,3 @@
-"""
-The developers of the rasterio library provide additional examples of usage. 
-For more details on the rasterio library, see the [rasterio](https://rasterio.readthedocs.io/en/latest/quickstart.html) documentation.
-
-## Read the header of a remote COG
-
-In this code you will : 
-
-- Query a STAC API with pystac-client to get link to a COG;  
-- Read header metadata from a remote COG file
-
-!!! info
-    This specific example uses the collection **mrdem-30** from CCMEO's datacube
-"""
 # --8<-- [start:code]
 import pystac_client
 import rasterio 

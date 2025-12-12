@@ -1,23 +1,3 @@
-"""
-## Read a portion of a remote COG - Point
-
-For this example, you will need to also install [shapely](https://shapely.readthedocs.io/en/stable/installation.html):   
-```bash
-pip install shapely
-```
-
-In this code you will : 
-
-- Query a STAC API with pystac-client;
-- Read values of remote COG based on coordinates with the [sample()](https://rasterio.readthedocs.io/en/stable/api/rasterio.io.html#rasterio.io.DatasetReader.sample) functionality;
-
-!!! info
-    This specific example uses the collection **mrdem-30** from CCMEO's datacube
-
-!!! Tip
-    To perform the same request using gdal, refere to the [gdallocationinfo](https://gdal.org/en/stable/programs/gdallocationinfo.html) utility 
-
-"""
 # --8<-- [start:code]
 import pystac_client
 import rasterio 

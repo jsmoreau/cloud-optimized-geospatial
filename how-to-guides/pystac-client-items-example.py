@@ -1,16 +1,3 @@
-"""
-## List items
-
-In this example you will learn how to :   
-
-- Query a STAC API with pystac-client with a portion of filter;   
-- Access the data href for the specific filter.  
-
-!!! info
-    This specific example uses the collection hrdem-mosaic-2m from CCMEO's datacube
-
-For more details on search parameters available with pystac-client, see [items search](https://pystac-client.readthedocs.io/en/stable/usage.html#itemsearch) documentation.  
-"""
 # --8<-- [start:code]
 # Import the library needed
 import pystac_client

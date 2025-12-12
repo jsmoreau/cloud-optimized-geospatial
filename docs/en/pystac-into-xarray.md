@@ -21,11 +21,15 @@ The following examples focus on loading COG data into xarray object backed by Da
 ```
 Source :  [rioxarray installation]
 
-::: how-to-guides.rioxarray-example
-    options:
-        show_source: false
-        members: no
-        show_root_toc_entry: false # To remove the name of the file in the TOC
+### Open a remote raster dataset into Xarray with rioxarray
+
+In this code you will:
+
+- Query a STAC API with pystac-client to get link to a COG
+- Open the raster into an Xarray DataArray with rioxarray
+
+!!! info
+    This specific example uses the collection **hrdem-lidar:dtm** from CCMEO's datacube
 
 ``` py linenums="1" hl_lines="20-23"
 --8<-- "how-to-guides/rioxarray-example.py:code"
@@ -54,12 +58,18 @@ See [pystac.Item] or [pystac-client] for more information.
 --8<-- "how-to-guides/stackstac-requirements.txt"
 ```
 
-<!-- START: Read with stackstac-stac -->
-::: how-to-guides.stackstac-example
-    options:
-        show_source: false
-        members: no
-        show_root_toc_entry: false # To remove the name of the file in the TOC
+#### Load STAC items into an Xarray with stackstac
+
+In this code you will:
+
+- Query a STAC API with pystac-client to get STAC items
+- Load multiple items into an Xarray DataArray with stackstac
+
+!!! info
+    This specific example uses the collection **landcover** from CCMEO's datacube
+
+!!! tip
+    The stackstac library allows you to pass multiple STAC items together and produce an xarray with a temporal dimension
 
 ``` py linenums="1" hl_lines="36-41"
 --8<-- "how-to-guides/stackstac-example.py:code"
@@ -73,12 +83,18 @@ See [working-with-xarray-object] or [community-notebook-complete-examples] secti
 --8<-- "how-to-guides/odc-stac-requirements.txt"
 ```
 
-<!-- START: Read with odc-stac -->
-::: how-to-guides.odc-stac-example
-    options:
-        show_source: false
-        members: no
-        show_root_toc_entry: false # To remove the name of the file in the TOC
+#### Load STAC items into an Xarray with odc-stac
+
+In this code you will:
+
+- Query a STAC API with pystac-client to get STAC items
+- Load multiple items into an Xarray Dataset with odc-stac
+
+!!! info
+    This specific example uses the collection **landcover** from CCMEO's datacube
+
+!!! tip
+    The odc-stac library allows you to pass multiple STAC items together and produce an xarray with a temporal dimension
 
 ``` py linenums="1" hl_lines="38-41"
 --8<-- "how-to-guides/odc-stac-example.py:code"

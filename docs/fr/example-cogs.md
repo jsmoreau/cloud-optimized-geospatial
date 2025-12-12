@@ -10,45 +10,77 @@ Voir <https://guide.cloudnativegeo.org/>
 
 ## Utilisation de [rasterio]
 
+Les développeurs de la bibliothèque rasterio fournissent des exemples d'utilisation supplémentaires.
+Pour plus de détails sur la bibliothèque rasterio, consultez la documentation [rasterio](https://rasterio.readthedocs.io/en/latest/quickstart.html).
+
 ``` sh
 --8<-- "how-to-guides/rasterio-requirements.txt:2:2"
 ```
 
-<!-- START: Read the header of a cog using rasterio -->
-::: how-to-guides.rasterio-header-example
-    options:
-        show_source: false
-        members: no
-        show_root_toc_entry: false # To remove the name of the file in the TOC
+### Lire l'en-tête d'un COG distant
+
+Dans ce code, vous allez :
+
+- Interroger une API STAC avec pystac-client pour obtenir le lien vers un COG
+- Lire les métadonnées d'en-tête d'un fichier COG distant
+
+!!! info
+    Cet exemple spécifique utilise la collection **mrdem-30** du cube de données du CCCOT
 
 ``` py linenums="1" hl_lines="23-35"
 --8<-- "how-to-guides/rasterio-header-example.py:code"
 ```
-<!-- END: Read the header of a cog using rasterio -->
 
-<!-- START: Read a portion of a cog using rasterio -->
-::: how-to-guides.rasterio-window-example
-    options:
-        show_source: false
-        members: no
-        show_root_toc_entry: false # To remove the name of the file in the TOC
+### Lire une portion d'un COG distant - Rectangle englobant
+
+Pour cet exemple, vous devrez également installer [shapely](https://shapely.readthedocs.io/en/stable/installation.html) :
+```bash
+pip install shapely
+```
+
+Dans ce code, vous allez :
+
+- Interroger une API STAC avec pystac-client pour obtenir le lien vers un COG
+- Lire une portion d'un COG distant basée sur une zone d'intérêt avec la fonctionnalité window
+- Écrire la portion localement dans un fichier .tif (Optionnel)
+
+!!! info
+    Cet exemple spécifique utilise la collection **mrdem-30** du cube de données du CCCOT
+
+!!! Tip
+    Le fichier COG contient un carrelage interne qui peut être exploité en itérant sur
+    le `src.block_windows()` lors de la lecture. Si la fenêtre de lecture ne s'aligne pas avec
+    le carrelage interne du fichier, les données seront rééchantillonnées.
+
+    Exemple : <https://rasterio.readthedocs.io/en/stable/topics/windowed-rw.html#blocks>
+
+    Définition API : <https://rasterio.readthedocs.io/en/stable/topics/windowed-rw.html#blocks>
 
 ``` py linenums="1" hl_lines="27-37"
 --8<-- "how-to-guides/rasterio-window-example.py:code"
 ```
-<!-- END: Read a portion of a cog using rasterio -->
 
-<!-- START: Read pixel with coord using rasterio -->
-::: how-to-guides.rasterio-point-example
-    options:
-        show_source: false
-        members: no
-        show_root_toc_entry: false # To remove the name of the file in the TOC
+### Lire une portion d'un COG distant - Point
+
+Pour cet exemple, vous devrez également installer [shapely](https://shapely.readthedocs.io/en/stable/installation.html) :
+```bash
+pip install shapely
+```
+
+Dans ce code, vous allez :
+
+- Interroger une API STAC avec pystac-client
+- Lire les valeurs d'un COG distant basées sur des coordonnées avec la fonctionnalité [sample()](https://rasterio.readthedocs.io/en/stable/api/rasterio.io.html#rasterio.io.DatasetReader.sample)
+
+!!! info
+    Cet exemple spécifique utilise la collection **mrdem-30** du cube de données du CCCOT
+
+!!! Tip
+    Pour effectuer la même requête en utilisant gdal, consultez l'utilitaire [gdallocationinfo](https://gdal.org/en/stable/programs/gdallocationinfo.html)
 
 ``` py linenums="1" hl_lines="34-38"
 --8<-- "how-to-guides/rasterio-point-example.py:code"
 ```
-<!-- END: Read pixel with coord cog using rasterio -->
 
 [rasterio installation]: https://rasterio.readthedocs.io/en/stable/installation.html
 [rasterio]: https://rasterio.readthedocs.io/en/latest/quickstart.html

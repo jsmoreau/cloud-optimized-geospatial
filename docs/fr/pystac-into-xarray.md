@@ -21,11 +21,15 @@ Les exemples suivants se concentrent sur le chargement de données COG dans un o
 ```
 Source :  [rioxarray installation]
 
-::: how-to-guides.rioxarray-example
-    options:
-        show_source: false
-        members: no
-        show_root_toc_entry: false # To remove the name of the file in the TOC
+### Ouvrir un jeu de données raster distant dans Xarray avec rioxarray
+
+Dans ce code, vous allez :
+
+- Interroger une API STAC avec pystac-client pour obtenir le lien vers un COG
+- Ouvrir le raster dans un Xarray DataArray avec rioxarray
+
+!!! info
+    Cet exemple spécifique utilise la collection **hrdem-lidar:dtm** du cube de données du CCCOT
 
 ``` py linenums="1" hl_lines="20-23"
 --8<-- "how-to-guides/rioxarray-example.py:code"
@@ -46,7 +50,7 @@ Consultez [pystac.Item] ou [pystac-client] pour plus d'informations.
     --8<-- "how-to-guides/odc-stac-example.py:transform"
     ```
         
-    For more information, please see [STAC documentation on proj:transform]
+    Pour plus d'informations, veuillez consulter [STAC documentation on proj:transform]
 
 ### Utilisation de [stackstac]
 
@@ -54,18 +58,24 @@ Consultez [pystac.Item] ou [pystac-client] pour plus d'informations.
 --8<-- "how-to-guides/stackstac-requirements.txt"
 ```
 
-<!-- START: Read with stackstac-stac -->
-::: how-to-guides.stackstac-example
-    options:
-        show_source: false
-        members: no
-        show_root_toc_entry: false # To remove the name of the file in the TOC
+#### Charger des items STAC dans un Xarray avec stackstac
+
+Dans ce code, vous allez :
+
+- Interroger une API STAC avec pystac-client pour obtenir des items STAC
+- Charger plusieurs items dans un Xarray DataArray avec stackstac
+
+!!! info
+    Cet exemple spécifique utilise la collection **landcover** du cube de données du CCCOT
+
+!!! tip
+    La bibliothèque stackstac vous permet de passer plusieurs items STAC ensemble et de produire un xarray avec une dimension temporelle
 
 ``` py linenums="1" hl_lines="36-41"
 --8<-- "how-to-guides/stackstac-example.py:code"
 ```
 
-See [working-with-xarray-object] or [community-notebook-complete-examples] section for an example on using Xarray object.
+Voir la section [utilisation-objet-xarray] ou [exemples-complets-notebooks-communautaires] pour un exemple d'utilisation d'un objet Xarray.
 
 ### Utilisation de [odc-stac]
 
@@ -73,17 +83,23 @@ See [working-with-xarray-object] or [community-notebook-complete-examples] secti
 --8<-- "how-to-guides/odc-stac-requirements.txt"
 ```
 
-<!-- START: Read with odc-stac -->
-::: how-to-guides.odc-stac-example
-    options:
-        show_source: false
-        members: no
-        show_root_toc_entry: false # To remove the name of the file in the TOC
+#### Charger des items STAC dans un Xarray avec odc-stac
+
+Dans ce code, vous allez :
+
+- Interroger une API STAC avec pystac-client pour obtenir des items STAC
+- Charger plusieurs items dans un Xarray Dataset avec odc-stac
+
+!!! info
+    Cet exemple spécifique utilise la collection **landcover** du cube de données du CCCOT
+
+!!! tip
+    La bibliothèque odc-stac vous permet de passer plusieurs items STAC ensemble et de produire un xarray avec une dimension temporelle
 
 ``` py linenums="1" hl_lines="38-41"
 --8<-- "how-to-guides/odc-stac-example.py:code"
 ```
-See [working-with-xarray-object] or [community-notebook-complete-examples] section for an example on using Xarray object.
+Voir la section [utilisation-objet-xarray] ou [exemples-complets-notebooks-communautaires] pour un exemple d'utilisation d'un objet Xarray.
 
 ## Utilisation d'un objet Xarray
 Consultez `Xarray.DataArray` pour les détails sur les méthodes : <https://docs.xarray.dev/en/stable/generated/xarray.DataArray.html>
