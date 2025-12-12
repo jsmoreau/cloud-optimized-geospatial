@@ -11,27 +11,51 @@ site_dir: public
 theme:
   # name: readthedocs
   name: material
-  language: en
   features:
     - content.code.copy
     - search.highlight
-    - navigation.path # Ne semble pas fonctionner...
+    - navigation.path
     - navigation.top
     - navigation.footer
     - content.tooltips
     # - content.action.view # To see the source page, we don't want that
-  #   - navigation.tabs # Ne fonctionnne pas...
+  #   - navigation.tabs
     # - navigation.indexes
-    # - navigation.footer
 
-# extra: 
-#   social: # Ne marche pas
-#     - icon: fontawesome/brands/github
-#       link: https://github.com/NRCan/cloud-optimized-geospatial
+extra:
+  alternate:
+    - name: English
+      link: ./
+      lang: en
+    - name: Français
+      link: ./fr/
+      lang: fr
 
 plugins:
   # - same-dir
   - search
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: fr
+          name: Français
+          build: true
+          nav_translations:
+            Home: Accueil
+            How-to Guides: Guides pratiques
+            STAC API: API STAC
+            COG: COG
+            Additionnal libraires: Bibliothèques supplémentaires
+            External References: Références externes
+            Additional Information: Informations supplémentaires
+            Known Bugs: Bogues connus
   - mkdocstrings :
       handlers:
         # See: https://mkdocstrings.github.io/python/usage/
